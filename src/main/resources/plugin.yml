@@ -1,0 +1,4 @@
+name: CORE-SHIELD
+version: '${project.version}'
+main: pl.shieldcode.coreshield.CORE_SHIELD
+api-version: '1.20'
