@@ -1,4 +1,4 @@
-package pl.shieldcode.coreshield;
+package pl.shieldcode.coreshield.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -17,7 +17,7 @@ public class RepairCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName().equalsIgnoreCase("repair")) {
             if (sender.hasPermission("shieldcode.repair")) {
-           
+
                 if (args.length == 0) {
                     if (sender instanceof Player) {
                         Player p = (Player) sender;
@@ -64,7 +64,7 @@ public class RepairCommand implements CommandExecutor {
                         sender.sendMessage(ChatColor.GREEN + "Wszystkie przedmioty w ekwipunku gracza " + ChatColor.GOLD + t.getName() + ChatColor.GREEN + " zostały naprawione");
                         t.sendMessage(ChatColor.GREEN + "Wszystkie przedmioty w ekwipunku zostały naprawione");
                     } else {
-                        // Naprawa przedmiotu w ręce gracza
+
                         ItemStack main = t.getInventory().getItemInMainHand();
                         if (main == null || main.getItemMeta() == null) {
                             sender.sendMessage(ChatColor.RED + "Gracz nie trzyma żadnego przedmiotu w ręce!");
@@ -80,7 +80,7 @@ public class RepairCommand implements CommandExecutor {
                         }
                     }
                 } else {
-                    sender.sendMessage(ChatColor.RED + "Błędne użycie komendy. Użyj: /repair [gracz] [all]");
+                    sender.sendMessage(ChatColor.RED + "Błędne użycie komendy. Użyj: /repair [all] [gracz] ");
                 }
             } else {
                 sender.sendMessage(ChatColor.RED + "Nie masz uprawnień do korzystania z tej komendy");
