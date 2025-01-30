@@ -17,7 +17,7 @@ public class RepairCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName().equalsIgnoreCase("repair")) {
             if (sender.hasPermission("shieldcode.repair")) {
-                // Sprawdzamy, czy podano argumenty
+           
                 if (args.length == 0) {
                     if (sender instanceof Player) {
                         Player p = (Player) sender;
